@@ -14,12 +14,13 @@ public class Main {
 		
 		Fenetre fenetre = new Fenetre();
 		
-		PluginFinder pf = new PluginFinder(new File(System.getProperty("java.class.path")+"/plugins"), fenetre.getTools());
+		PluginFinder pf = new PluginFinder(new File(System.getProperty("java.class.path")+"/plugins"), fenetre.getTools(), fenetre.getTextArea());
 		Timer timer = new Timer(1000, pf);
 		timer.start();
 		
 		fenetre.setVisible(true);
 		fenetre.pack();
+		
 		
 	}
 

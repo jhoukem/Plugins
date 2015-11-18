@@ -13,19 +13,16 @@ import javax.swing.JTextArea;
 public class Fenetre extends JFrame {
 	
 	private JTextArea text = new JTextArea();
+	
+
 	private JScrollPane jsp = new JScrollPane(text);
 	private JMenuBar menu = new JMenuBar();
 	private JMenu tools = new JMenu("Tools");
-	
-	public JMenu getTools() {
-		return tools;
-	}
-
 	public Fenetre(){
 		this.setTitle("Extendable Editor");
 		this.setResizable(false);
 		this.setPreferredSize(new Dimension(500, 300));
-		
+
 		initMenu();
 		
 		this.setJMenuBar(menu);
@@ -45,4 +42,11 @@ public class Fenetre extends JFrame {
 		file.add(close);
 	}
 	
+	
+	public JMenu getTools() {
+		return tools;
+	}
+	public JTextArea getTextArea() {
+		return text;
+	}
 }
