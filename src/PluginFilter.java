@@ -26,7 +26,7 @@ public class PluginFilter implements FilenameFilter, ActionListener {
 
 
 	public void actionPerformed(ActionEvent e) {
-		
+		System.out.println("action performed");
 	}
 
 }

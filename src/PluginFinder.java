@@ -11,8 +11,7 @@ public class PluginFinder {
 	}
 	
 	File [] listClassFile(){
-		
-		return null;
+		return dPath.listFiles(pf);
 	}
 	
 
