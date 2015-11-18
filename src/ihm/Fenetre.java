@@ -11,24 +11,31 @@ import javax.swing.JTextArea;
 
 @SuppressWarnings("serial")
 public class Fenetre extends JFrame {
-	JTextArea text = new JTextArea();
-	JScrollPane jsp = new JScrollPane(text);
 	
+	private JTextArea text = new JTextArea();
+	private JScrollPane jsp = new JScrollPane(text);
+	private JMenuBar menu = new JMenuBar();
+	private JMenu tools = new JMenu("Tools");
+	
+	public JMenu getTools() {
+		return tools;
+	}
+
 	public Fenetre(){
 		this.setTitle("Extendable Editor");
 		this.setResizable(false);
 		this.setPreferredSize(new Dimension(500, 300));
+		
+		initMenu();
+		
+		this.setJMenuBar(menu);
+		this.getContentPane().add(jsp);
+		
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setJMenuBar(initMenu());
-		this.add(jsp);
-		this.setVisible(true);
-		this.pack();
 	}
 	
-	public JMenuBar initMenu(){
-		JMenuBar menu = new JMenuBar();
+	public void initMenu(){
 		JMenu file = new JMenu("File");
-		JMenu tools = new JMenu("Tools");
 		JMenu help = new JMenu("Help");
 		JMenuItem close = new JMenuItem("Close");
 		
@@ -36,8 +43,6 @@ public class Fenetre extends JFrame {
 		menu.add(tools);
 		menu.add(help);
 		file.add(close);
-		
-		return menu;
 	}
 	
 }
